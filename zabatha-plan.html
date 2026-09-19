@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الخطة الرئيسية لتنفيذ مشروع التخرج — ظبطها (Zabatha)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f8fb;
+    --surface:#ffffff;
+    --surface-2:#eef1f6;
+    --ink:#182233;
+    --ink-soft:#4b5567;
+    --muted:#7c879b;
+    --border:#e2e6ee;
+    --brand:#0d2c54;
+    --brand-2:#12406f;
+    --accent:#1a8f92;
+    --accent-2:#c98a2c;
+    --danger:#b8433f;
+    --danger-bg:#fdecea;
+    --ok-bg:#eaf6ef;
+    --ok:#227a4d;
+    --warn-bg:#fdf3e3;
+    --warn:#8a5a10;
+    --chip-bg:#eef3fb;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(15,23,42,.04), 0 6px 20px rgba(15,23,42,.06);
+    font-size:16px;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --bg:#0f1420;
+      --surface:#161d2b;
+      --surface-2:#1d2537;
+      --ink:#eef1f7;
+      --ink-soft:#c3cadb;
+      --muted:#8b95ac;
+      --border:#2a3348;
+      --brand:#7fb2ff;
+      --brand-2:#9fc4ff;
+      --accent:#4fd0c9;
+      --accent-2:#e3b45f;
+      --danger:#ff8f8a;
+      --danger-bg:#3a1f22;
+      --ok-bg:#173327;
+      --ok:#6fd39a;
+      --warn-bg:#3a2f16;
+      --warn:#e8bf6e;
+      --chip-bg:#1c2438;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1420;
+    --surface:#161d2b;
+    --surface-2:#1d2537;
+    --ink:#eef1f7;
+    --ink-soft:#c3cadb;
+    --muted:#8b95ac;
+    --border:#2a3348;
+    --brand:#7fb2ff;
+    --brand-2:#9fc4ff;
+    --accent:#4fd0c9;
+    --accent-2:#e3b45f;
+    --danger:#ff8f8a;
+    --danger-bg:#3a1f22;
+    --ok-bg:#173327;
+    --ok:#6fd39a;
+    --warn-bg:#3a2f16;
+    --warn:#e8bf6e;
+    --chip-bg:#1c2438;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  html{scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Cairo','IBM Plex Sans',system-ui,-apple-system,sans-serif;
+    line-height:1.85;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  a{color:var(--brand-2)}
+  .topbar{
+    position:sticky; top:0; z-index:40;
+    background:var(--brand);
+    color:#fff;
+    padding:calc(14px + env(safe-area-inset-top,0px)) 20px 14px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    box-shadow:var(--shadow);
+  }
+  .topbar .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem}
+  .topbar .brand small{display:block; font-weight:500; font-size:.72rem; opacity:.8; margin-top:2px}
+  .topbar .tag{
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    padding:6px 12px; border-radius:999px; font-size:.78rem; white-space:nowrap;
+  }
+  .menu-btn{
+    display:none; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3);
+    color:#fff; border-radius:10px; padding:8px 12px; font-family:inherit; font-size:.85rem; cursor:pointer;
+  }
+  .shell{ display:grid; grid-template-columns:270px 1fr; max-width:1280px; margin:0 auto; align-items:start; }
+  nav.toc{
+    position:sticky; top:calc(70px + env(safe-area-inset-top,0px));
+    max-height:calc(100vh - 90px - env(safe-area-inset-top,0px));
+    overflow-y:auto;
+    padding:18px 14px 40px;
+    border-left:1px solid var(--border);
+  }
+  nav.toc .toc-title{font-size:.72rem; color:var(--muted); font-weight:700; letter-spacing:.03em; padding:0 8px 8px}
+  nav.toc a{
+    display:block; padding:8px 10px; border-radius:10px; color:var(--ink-soft);
+    text-decoration:none; font-size:.86rem; font-weight:600; margin-bottom:2px;
+  }
+  nav.toc a:hover{background:var(--surface-2); color:var(--ink)}
+  nav.toc a.lvl2{font-weight:500; font-size:.8rem; padding-right:22px; color:var(--muted)}
+  main{padding:28px 22px 90px; min-width:0}
+  .hero{
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    color:#fff; border-radius:var(--radius); padding:30px 26px; margin-bottom:26px;
+    box-shadow:var(--shadow);
+  }
+  .hero h1{margin:0 0 8px; font-size:1.7rem; font-weight:800}
+  .hero p{margin:0; opacity:.92; font-size:.98rem; max-width:60ch}
+  .hero .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .hero .chips span{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); padding:5px 12px; border-radius:999px; font-size:.78rem}
+  section{margin-bottom:34px; scroll-margin-top:90px}
+  section > h2{
+    font-size:1.28rem; font-weight:800; color:var(--brand);
+    margin:0 0 6px; padding-bottom:10px; border-bottom:2px solid var(--border);
+    display:flex; align-items:center; gap:10px;
+  }
+  section > h2 .num{
+    background:var(--brand); color:#fff; width:30px; height:30px; border-radius:9px;
+    display:flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0;
+  }
+  section > .lede{color:var(--ink-soft); font-size:.94rem; margin:10px 0 18px}
+  h3{font-size:1.05rem; color:var(--ink); margin:22px 0 10px; font-weight:700}
+  h3 .sub-badge{font-size:.7rem; color:var(--muted); font-weight:500; margin-inline-start:6px}
+  p{color:var(--ink-soft); font-size:.95rem}
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:18px 20px; margin-bottom:16px; box-shadow:var(--shadow);
+  }
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .table-wrap{overflow-x:auto; border:1px solid var(--border); border-radius:12px; margin:12px 0 20px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:.87rem}
+  thead th{
+    background:var(--surface-2); color:var(--brand); font-weight:700; text-align:right;
+    padding:11px 14px; border-bottom:1px solid var(--border); white-space:nowrap;
+  }
+  tbody td{padding:11px 14px; border-bottom:1px solid var(--border); color:var(--ink-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--surface-2)}
+  td strong, .ink{color:var(--ink)}
+  .pill{display:inline-block; padding:3px 10px; border-radius:999px; font-size:.74rem; font-weight:700; white-space:nowrap}
+  .pill.high{background:var(--danger-bg); color:var(--danger)}
+  .pill.mid{background:var(--warn-bg); color:var(--warn)}
+  .pill.low{background:var(--ok-bg); color:var(--ok)}
+  .pill.mvp{background:var(--ok-bg); color:var(--ok)}
+  .pill.later{background:var(--chip-bg); color:var(--brand-2)}
+  .pill.future{background:var(--surface-2); color:var(--muted)}
+  .open-q{
+    background:var(--warn-bg); border:1px solid #e9c98a; border-radius:12px;
+    padding:14px 16px; margin:10px 0;
+  }
+  :root[data-theme="dark"] .open-q, .open-q{ border-color: color-mix(in srgb, var(--warn) 45%, var(--border)); }
+  .open-q .flag{font-weight:800; color:var(--warn); font-size:.82rem; display:flex; align-items:center; gap:6px; margin-bottom:6px}
+  .open-q ul{margin:8px 0 0; padding-inline-start:20px}
+  .open-q li{margin-bottom:4px; font-size:.9rem; color:var(--ink-soft)}
+  .month-block{
+    border:1px solid var(--border); border-radius:var(--radius); margin-bottom:18px; overflow:hidden;
+    background:var(--surface); box-shadow:var(--shadow);
+  }
+  .month-head{
+    background:var(--surface-2); padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+  }
+  .month-head .m-name{font-weight:800; color:var(--brand); font-size:1.02rem}
+  .month-head .m-focus{color:var(--ink-soft); font-size:.85rem; margin-top:2px}
+  .month-body{padding:14px 18px}
+  .status-note{
+    background:var(--chip-bg); border-radius:10px; padding:10px 14px; font-size:.83rem; color:var(--ink-soft); margin-top:10px;
+    border-inline-start:3px solid var(--accent);
+  }
+  .toolbar{
+    display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 20px;
+  }
+  .toolbar button{
+    font-family:inherit; background:var(--surface); border:1px solid var(--border); color:var(--ink-soft);
+    padding:8px 14px; border-radius:10px; font-size:.82rem; cursor:pointer; font-weight:600;
+  }
+  .toolbar button:hover{background:var(--surface-2); color:var(--ink)}
+  .divider{height:1px; background:var(--border); margin:26px 0}
+  .footer-note{color:var(--muted); font-size:.8rem; text-align:center; padding:20px 0 40px}
+  code{background:var(--surface-2); padding:1px 6px; border-radius:6px; font-size:.85em; direction:ltr; display:inline-block}
+  @media (max-width: 900px){
+    .shell{grid-template-columns:1fr}
+    nav.toc{
+      position:fixed; inset-inline-start:0; top:0; bottom:0; width:78%; max-width:320px;
+      background:var(--surface); z-index:60; transform:translateX(110%);
+      transition:transform .25s ease; padding-top:calc(70px + env(safe-area-inset-top,0px));
+      box-shadow:0 0 40px rgba(0,0,0,.25);
+    }
+    html[dir="rtl"] nav.toc{transform:translateX(-110%)}
+    nav.toc.open{transform:translateX(0)}
+    .menu-btn{display:inline-block}
+    .grid-2{grid-template-columns:1fr}
+    .hero h1{font-size:1.35rem}
+  }
+  @media print{
+    .topbar, nav.toc, .toolbar, .menu-btn{display:none !important}
+    .shell{display:block}
+    main{padding:0}
+    section{page-break-inside:avoid}
+    .card, .month-block, .table-wrap{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn">☰ الفهرس</button>
+  <div class="brand">ظبطها <small>Zabatha — خطة تنفيذ مشروع التخرج</small></div>
+  <span class="tag">خطة عام كامل · ١٢ شهرًا</span>
+</div>
+
+<div class="shell">
+  <nav class="toc" id="tocNav">
+    <div class="toc-title">محتويات الخطة</div>
+    <a href="#overview">١. نظرة عامة ومرجعية المصادر</a>
+    <a href="#team">٢. الفريق وتوزيع الأدوار</a>
+    <a href="#stack">٣. التقنيات المستخدمة</a>
+    <a href="#scope">٤. النطاق: الـMVP والمراحل اللاحقة</a>
+    <a href="#method">٥. منهجية العمل</a>
+    <a href="#timeline">٦. الخطة الزمنية — ١٢ شهرًا</a>
+    <a href="#timeline" class="lvl2">الشهر ١ — التحليل والتأسيس</a>
+    <a href="#m2" class="lvl2">الشهر ٢ — التصميم المعماري</a>
+    <a href="#m3" class="lvl2">الشهر ٣ — الـBackend الأساسي</a>
+    <a href="#m4" class="lvl2">الشهر ٤ — واجهة الويب</a>
+    <a href="#m5" class="lvl2">الشهر ٥ — تطبيق الموبايل</a>
+    <a href="#m6" class="lvl2">الشهر ٦ — الذكاء الاصطناعي (١)</a>
+    <a href="#m7" class="lvl2">الشهر ٧ — التقييمات والملفات</a>
+    <a href="#m8" class="lvl2">الشهر ٨ — طبقة الأمان</a>
+    <a href="#m9" class="lvl2">الشهر ٩ — تحليل المراجعات ولوحة الإدارة</a>
+    <a href="#m10" class="lvl2">الشهر ١٠ — الاختبار الشامل</a>
+    <a href="#m11" class="lvl2">الشهر ١١ — الأمان والأداء والـUAT</a>
+    <a href="#m12" class="lvl2">الشهر ١٢ — التوثيق والمناقشة</a>
+    <a href="#testing">٧. خطة الاختبار</a>
+    <a href="#risks">٨. إدارة المخاطر</a>
+    <a href="#deliverables">٩. المخرجات حسب كل ربع سنة</a>
+    <a href="#open">١٠. القرارات المفتوحة التي يحتاج الفريق حسمها</a>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <h1>الخطة الرئيسية لتنفيذ مشروع التخرج — ظبطها (Zabatha)</h1>
+      <p>خطة تنفيذ فعلية مدتها اثنا عشر شهرًا، مُعدّة بأسلوب مشرف تقني ومهندس معماري للبرمجيات (Technical Project Supervisor + Software Architect)، لمساعدة الفريق على معرفة أين هو الآن، وماذا يجب أن يعمل هذا الأسبوع، وما الذي يجب أن يكتمل قبل الانتقال للخطوة التالية.</p>
+      <div class="chips">
+        <span>منصة موحدة لاكتشاف الخدمات المحلية</span>
+        <span>النسخة التجريبية: طنطا، الغربية</span>
+        <span>ويب + موبايل (Flutter) + ذكاء اصطناعي + أمان</span>
+      </div>
+    </div>
+
+    <!-- 1. Overview -->
+    <section id="overview">
+      <h2><span class="num">١</span> نظرة عامة ومرجعية المصادر</h2>
+      <p class="lede">هذا القسم يلخّص فهمنا لمشروع «ظبطها» بناءً على مستندين تم توفيرهما: توثيق المشروع النصي (Project Overview)، وعرض تقديمي مرئي يلخّص الرؤية والتقنية العامة. كل معلومة في هذه الخطة مبنية على هذين المصدرين فقط؛ وأي شيء غير مذكور فيهما تم تمييزه بوضوح في القسم العاشر بدل افتراضه.</p>
+
+      <div class="card">
+        <h3>ما هو ظبطها؟</h3>
+        <p><strong class="ink">ظبطها (Zabatha)</strong> منصة رقمية موحدة (Unified Platform) تجمع الخدمات ومقدمي الخدمات والورش والمحلات والأنشطة المحلية في مكان واحد، لتسهيل وصول العملاء إلى الخدمة التي يحتاجونها بالقرب منهم. المنصة لا تقتصر على الصنايعية فقط، بل تشمل قطاعات متعددة: صيانة المنازل، الإصلاحات، خدمات السيارات، صيانة الموبايلات والكمبيوتر، المحلات، الورش، التنظيف، النقل، والتركيب.</p>
+        <p>يبحث المستخدم عن الخدمة أو يصف المشكلة التي يواجهها بأسلوب طبيعي، فتعرض له المنصة مقدمي الخدمات المناسبين والقريبين منه مع الموقع، رقم الهاتف، مواعيد العمل، المسافة، والتقييمات. وفي المقابل، يستطيع أصحاب الأنشطة إنشاء ملف تعريفي رقمي يمنحهم ظهورًا ويساعدهم على الوصول لعملاء جدد. تبدأ النسخة التجريبية من طنطا، الغربية، مع إمكانية التوسع لاحقًا إلى الإسكندرية والقاهرة ثم باقي مصر.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-top:0">الفئات المستهدفة</h3>
+          <p><strong class="ink">العملاء:</strong> أي شخص يحتاج خدمة أو نشاطًا محليًا، سواء بشكل عاجل أو مخطط له.<br>
+          <strong class="ink">مقدمو الخدمات:</strong> الصنايعية والفنيون ومقدمو خدمات الصيانة والإصلاح.<br>
+          <strong class="ink">أصحاب الأنشطة المحلية:</strong> أصحاب الورش والمحلات الذين يريدون وجودًا رقميًا وعملاء جددًا.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">قطاعات الخدمة الرئيسية</h3>
+          <p>الصيانة المنزلية (سباكة، كهرباء، نجارة، تكييف، دهانات) · الإصلاحات والورش (موبايلات، كمبيوتر، أجهزة) · السيارات (ميكانيكا، كهرباء سيارات، إطارات، غسيل) · المحلات والأنشطة (أثاث، مطابخ) · خدمات تقنية ومنزلية أخرى (شبكات، تصوير، طباعة، تنظيف، نقل، تركيب).</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">مكونات النظام (System Components)</h3>
+        <p>تطبيق ويب (Web Application) · تطبيق موبايل بتقنية Flutter · واجهة خلفية وواجهة برمجة تطبيقات (Backend / REST API) · قاعدة بيانات (Database) · طبقة ذكاء اصطناعي (AI Layer) · طبقة أمان سيبراني (Cyber Security Layer) تشمل المصادقة (Authentication)، أمان الـAPI، أمان قاعدة البيانات، اختبار الاختراق (Penetration Testing)، والمراقبة الأمنية والاستجابة للحوادث.</p>
+      </div>
+    </section>
+
+    <!-- 2. Team -->
+    <section id="team">
+      <h2><span class="num">٢</span> الفريق وتوزيع الأدوار</h2>
+      <p class="lede">عدد أعضاء الفريق وتخصص كل عضو بالاسم <strong>غير محدد في الملفات الحالية ويحتاج إلى قرار من الفريق</strong>. لهذا السبب، هذه الخطة مبنية على <strong>أدوار وظيفية (Roles)</strong> وليس على أسماء أو أعداد ثابتة، بحيث يمكن للفريق توزيعها على نفسه بالشكل الذي يناسب عدد أعضائه الفعلي. أدناه خياران شائعان حسب حجم الفريق.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الدور (Role)</th><th>المسؤولية الأساسية</th><th>يظهر بشكل مكثف في</th></tr></thead>
+          <tbody>
+            <tr><td><strong class="ink">مطوّر الواجهة الخلفية (Backend Developer)</strong></td><td>بناء الـREST API، منطق الأعمال (Business Logic)، الربط بقاعدة البيانات، المصادقة.</td><td>الأشهر ٣، ٦، ٧، ٨، ٩</td></tr>
+            <tr><td><strong class="ink">مطوّر واجهة الويب (Frontend Web Developer)</strong></td><td>بناء واجهة الويب باستخدام React وربطها بالـAPI.</td><td>الأشهر ٢، ٤، ٧، ٩</td></tr>
+            <tr><td><strong class="ink">مطوّر تطبيق الموبايل (Mobile Developer)</strong></td><td>بناء تطبيق الموبايل بتقنية Flutter لنظامي Android و iOS.</td><td>الأشهر ٢، ٥، ٧، ٩</td></tr>
+            <tr><td><strong class="ink">مهندس الذكاء الاصطناعي (AI/ML Engineer)</strong></td><td>تصنيف المشاكل (Problem Classification)، التوصيات الذكية، تحليل المراجعات.</td><td>الأشهر ٦، ٩، ١٠</td></tr>
+            <tr><td><strong class="ink">مسؤول قاعدة البيانات (Database Engineer)</strong></td><td>تصميم المخطط العلائقي (ERD)، الفهرسة، الأداء، النسخ الاحتياطي.</td><td>الأشهر ٢، ٣</td></tr>
+            <tr><td><strong class="ink">مهندس الأمان (Security Engineer)</strong></td><td>تطبيق طبقة الأمان، اختبار الاختراق، مراجعة الثغرات.</td><td>الأشهر ٨، ١١</td></tr>
+            <tr><td><strong class="ink">مصمم تجربة/واجهة المستخدم (UI/UX Designer)</strong></td><td>تصميم الشاشات (Wireframes/Mockups) لكل من الويب والموبايل.</td><td>الأشهر ١، ٢</td></tr>
+            <tr><td><strong class="ink">منسّق المشروع (Project Coordinator)</strong></td><td>متابعة الـSprints، التواصل مع المشرف، التوثيق العام.</td><td>طوال المشروع</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-top:0">خيار أ — فريق صغير (٤ أعضاء)</h3>
+          <p>كل عضو يغطي أكثر من دور:<br>
+          <strong class="ink">عضو ١:</strong> Backend + Database<br>
+          <strong class="ink">عضو ٢:</strong> Frontend Web + UI/UX<br>
+          <strong class="ink">عضو ٣:</strong> Mobile (Flutter)<br>
+          <strong class="ink">عضو ٤:</strong> AI/ML + Security (بالتنسيق مع بقية الفريق)</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">خيار ب — فريق متوسط (٥–٦ أعضاء)</h3>
+          <p>دور متخصص لكل عضو تقريبًا:<br>
+          Backend · Frontend Web · Mobile · AI/ML · Database/DevOps · Security/QA، مع تشارك الجميع في UI/UX والتوثيق حسب الحاجة.</p>
+        </div>
+      </div>
+      <div class="status-note">💡 مهما كان الحجم النهائي، الأدوار الثمانية أعلاه هي نفسها المستخدمة كمرجع في جدول الخطة الزمنية (القسم ٦)، فقط وزّعوها على عدد الأعضاء الفعلي لديكم.</div>
+    </section>
+
+    <!-- 3. Stack -->
+    <section id="stack">
+      <h2><span class="num">٣</span> التقنيات المستخدمة (Technology Stack)</h2>
+      <p class="lede">هذا الجدول يعكس التقنيات المذكورة صراحة في مصادر المشروع، مع توضيح دور كل تقنية. البنود المعلّمة بـ ⚠️ تحتاج قرارًا إضافيًا من الفريق (تفاصيلها في القسم ١٠).</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الطبقة</th><th>التقنية</th><th>الدور في المشروع</th></tr></thead>
+          <tbody>
+            <tr><td>واجهة الويب</td><td><code>React</code></td><td>بناء واجهة مستخدم تفاعلية وسريعة الاستجابة لتطبيق الويب.</td></tr>
+            <tr><td>تطبيق الموبايل</td><td><code>Flutter</code> (Dart)</td><td>تطبيق واحد يعمل على Android و iOS من قاعدة كود واحدة (Cross-platform).</td></tr>
+            <tr><td>الواجهة الخلفية</td><td><code>Node.js</code> + REST API ⚠️</td><td>إدارة منطق الأعمال، المصادقة، وربط الواجهات بقاعدة البيانات. إطار العمل فوق Node.js (Express.js أو NestJS) غير محدد بعد.</td></tr>
+            <tr><td>قاعدة البيانات</td><td>قاعدة بيانات علاقاتية (Relational Database) ⚠️</td><td>تخزين مركزي للمستخدمين، مقدمي الخدمات، الخدمات، والتقييمات. المحرك المحدد (PostgreSQL / MySQL / SQL Server) غير مذكور في الملفات.</td></tr>
+            <tr><td>طبقة الذكاء الاصطناعي</td><td>معالجة اللغة الطبيعية (NLP) ⚠️</td><td>تصنيف وصف المشكلة إلى خدمة محددة، توصيات ذكية، وتحليل مشاعر المراجعات. طريقة البناء (نموذج مخصص أم واجهة API جاهزة) غير محددة.</td></tr>
+            <tr><td>الأمان</td><td>Authentication · API Security · Database Security · Penetration Testing ⚠️</td><td>حماية حسابات المستخدمين، تأمين نقاط الاتصال بالـAPI، تشفير البيانات الحساسة، واختبار الثغرات دوريًا.</td></tr>
+            <tr><td>أدوات التطوير</td><td><code>Git</code> / <code>GitHub</code></td><td>التحكم بإصدارات الكود (Version Control) والتعاون بين أعضاء الفريق.</td></tr>
+            <tr><td>التكامل المستمر</td><td>أداة CI ⚠️ (مقترح: GitHub Actions)</td><td>تشغيل اختبارات الوحدات (Unit Testing) تلقائيًا عند كل رفع للكود، لاكتشاف الأخطاء مبكرًا.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. Scope -->
+    <section id="scope">
+      <h2><span class="num">٤</span> النطاق: الـMVP والمراحل اللاحقة</h2>
+      <p class="lede">لتجنّب تشتيت الفريق على مدار عام كامل، يتم تقسيم كل مميزات المشروع إلى ثلاث موجات: نسخة أولى قابلة للاستخدام (MVP)، ميزات المرحلة الثانية، وميزات مستقبلية إن سمح الوقت.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الميزة</th><th>الوصف</th><th>الأولوية</th></tr></thead>
+          <tbody>
+            <tr><td>تسجيل الدخول والحسابات</td><td>حساب للعميل وحساب لمقدم الخدمة (Authentication)</td><td><span class="pill mvp">MVP</span></td></tr>
+            <tr><td>البحث الأساسي</td><td>البحث عن خدمة حسب النوع والموقع والمسافة</td><td><span class="pill mvp">MVP</span></td></tr>
+            <tr><td>عرض مقدمي الخدمات القريبين</td><td>قائمة بالمزوّدين مع التقييم والمسافة ومواعيد العمل</td><td><span class="pill mvp">MVP</span></td></tr>
+            <tr><td>الملف الشخصي لمقدم الخدمة</td><td>معلومات النشاط، الخدمات، الموقع، وسائل التواصل</td><td><span class="pill mvp">MVP</span></td></tr>
+            <tr><td>التواصل المباشر</td><td>عرض رقم الهاتف / رابط تواصل لمقدم الخدمة</td><td><span class="pill mvp">MVP</span></td></tr>
+            <tr><td>تسجيل نشاط جديد</td><td>نموذج لأصحاب الأنشطة لإنشاء ملفهم على المنصة</td><td><span class="pill mvp">MVP</span></td></tr>
+            <tr><td>البحث بوصف المشكلة (AI)</td><td>تصنيف نص حر إلى خدمة محددة (Problem Classification)</td><td><span class="pill later">المرحلة ٢</span></td></tr>
+            <tr><td>التوصيات الذكية (AI)</td><td>ترتيب المزوّدين حسب الموقع، التقييم، والتوفر</td><td><span class="pill later">المرحلة ٢</span></td></tr>
+            <tr><td>نظام التقييمات والمراجعات</td><td>تقييم كامل بالنجوم مع تعليقات نصية</td><td><span class="pill later">المرحلة ٢</span></td></tr>
+            <tr><td>تحليل المراجعات (AI)</td><td>استخراج نقاط القوة والضعف المتكررة من المراجعات تلقائيًا</td><td><span class="pill later">المرحلة ٢</span></td></tr>
+            <tr><td>إرسال طلب خدمة / حجز</td><td>طلب داخل التطبيق بدل الاتصال المباشر فقط</td><td><span class="pill later">المرحلة ٢</span></td></tr>
+            <tr><td>المفضّلة (Favorites)</td><td>حفظ مقدمي الخدمات المفضّلين للرجوع إليهم لاحقًا</td><td><span class="pill later">المرحلة ٢</span></td></tr>
+            <tr><td>لوحة تحكم إدارية</td><td>إدارة المستخدمين والمحتوى والإبلاغات</td><td><span class="pill future">مستقبلية</span></td></tr>
+            <tr><td>إشعارات فورية (Push Notifications)</td><td>تنبيه المستخدم بردود مقدمي الخدمة أو تحديثات الطلب</td><td><span class="pill future">مستقبلية</span></td></tr>
+            <tr><td>دردشة داخل التطبيق</td><td>رسائل مباشرة بديلة عن رقم الهاتف</td><td><span class="pill future">مستقبلية</span></td></tr>
+            <tr><td>الدفع الإلكتروني</td><td>دفع مدفوعات الحجز داخل التطبيق</td><td><span class="pill future">مستقبلية</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>ميزات المرحلة «المستقبلية» غير مذكورة صراحة في مصادر المشروع كأولوية، وتم اقتراحها فقط كامتداد طبيعي — <strong>قرار تضمينها من عدمه، وبأي أولوية، يعود للفريق والمشرف.</strong></p>
+    </section>
+
+    <!-- 5. Methodology -->
+    <section id="method">
+      <h2><span class="num">٥</span> منهجية العمل</h2>
+      <div class="card">
+        <p>تعتمد هذه الخطة منهجية تطوير رشيقة (<strong class="ink">Agile</strong>) بنظام <strong class="ink">Sprints</strong> مدة كل منها أسبوعان، بحيث يحتوي كل شهر على Sprint-ين. في نهاية كل Sprint يجتمع الفريق لمراجعة ما تم إنجازه (Sprint Review) وتحديد أهداف الـSprint التالي.</p>
+        <p><strong class="ink">لماذا هذا الأسلوب؟</strong> لأن مشروع التخرج طويل (عام كامل) ومتعدد الأجزاء (ويب، موبايل، AI، أمان)، والعمل بدفعات قصيرة وقابلة للقياس يقلل خطر اكتشاف مشاكل كبيرة في وقت متأخر، ويجعل تقدّم كل فرد مرئيًا للفريق والمشرف.</p>
+        <p><strong class="ink">أدوات مقترحة لإدارة العمل:</strong> لوحة مهام (Kanban Board) على أداة مثل Trello أو GitHub Projects لتتبع المهام (To Do / In Progress / Done)، ومستودع واحد على GitHub بفروع منظمة (Git Flow مبسّط: <code>main</code> للإصدار المستقر، و<code>dev</code> للتطوير الجاري، وفرع لكل ميزة).</p>
+        <p><strong class="ink">قاعدة أساسية:</strong> لا يبدأ أي عضو في ميزة جديدة قبل التأكد أن الميزات التي تعتمد عليها (Dependencies) قد اكتملت واختُبرت — هذا موضّح بعمود «يعتمد على» في جداول الخطة الزمنية.</p>
+      </div>
+    </section>
+
+    <!-- 6. Timeline -->
+    <section id="timeline">
+      <h2><span class="num">٦</span> الخطة الزمنية — ١٢ شهرًا</h2>
+      <p class="lede">كل شهر مقسّم إلى Sprint-ين (أسبوعان لكل Sprint). لكل Sprint: الهدف، المهام الرئيسية، ما يعتمد عليه، والمخرج (Deliverable) الذي يجب أن يكون جاهزًا في نهايته.</p>
+
+      <div class="month-block" id="m1">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الأول — تحليل المشروع وتجهيز البنية الأساسية</div><div class="m-focus">Project Analysis &amp; Foundation Setup</div></div>
+          <span class="pill mid">تأسيسي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج (Deliverable)</th></tr></thead>
+            <tbody>
+              <tr><td>١ (الأسبوع ١-٢)</td><td>تحديد المتطلبات وتوزيع الأدوار</td><td>مراجعة توثيق المشروع، صياغة قائمة المتطلبات الوظيفية وغير الوظيفية، حسم القرارات المفتوحة الأساسية (القسم ١٠)، تحديد أدوار الفريق، إعداد مستودع GitHub</td><td>—</td><td>وثيقة متطلبات معتمدة + مستودع Git جاهز</td></tr>
+              <tr><td>٢ (الأسبوع ٣-٤)</td><td>دراسة تقنية وتجهيز بيئة العمل</td><td>كل عضو يهيّئ بيئة عمله (Node.js, React, Flutter SDK)، إعداد أداة إدارة المهام، بدء البحث في هيكلة الـREST API</td><td>حسم التقنيات في Sprint ١</td><td>بيئة تطوير موحّدة تعمل لدى كل الأعضاء</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: يمتلك كل عضو بيئة عمل جاهزة، ووثيقة المتطلبات معتمدة من المشرف.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m2">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الثاني — التصميم المعماري وتصميم قاعدة البيانات والواجهات</div><div class="m-focus">Architecture, Database &amp; UI/UX Design</div></div>
+          <span class="pill mid">تصميم</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>٣ (الأسبوع ١-٢)</td><td>التصميم المعماري للنظام</td><td>رسم مخطط System Architecture (طبقات الويب/الموبايل/الـAPI/الـDatabase/AI/Security)، تصميم مخطط قاعدة البيانات العلائقي (ERD): المستخدمون، مقدمو الخدمات، الخدمات، الطلبات، التقييمات</td><td>وثيقة المتطلبات</td><td>مخطط معماري + ERD معتمدان</td></tr>
+              <tr><td>٤ (الأسبوع ٣-٤)</td><td>تصميم واجهات المستخدم</td><td>تصميم الشاشات الرئيسية (Wireframes/Mockups) للويب والموبايل: البحث، قائمة النتائج، الملف الشخصي لمقدم الخدمة، تسجيل نشاط جديد</td><td>ERD والمعمارية</td><td>ملف تصميم (Figma أو أداة مشابهة) لشاشات الـMVP</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: تُعتمد الشاشات الأساسية من الفريق، وتكون قاعدة البيانات جاهزة للتنفيذ الفعلي.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m3">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الثالث — بناء الواجهة الخلفية الأساسية</div><div class="m-focus">Core Backend &amp; REST API</div></div>
+          <span class="pill high">تطوير أساسي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>٥ (الأسبوع ١-٢)</td><td>تجهيز قاعدة البيانات ونظام المصادقة</td><td>تنفيذ ERD فعليًا في محرك قاعدة البيانات المختار، بناء تسجيل الدخول والمصادقة (Authentication) للعميل ومقدم الخدمة</td><td>ERD المعتمد</td><td>قاعدة بيانات تعمل + Endpoint تسجيل دخول/حساب</td></tr>
+              <tr><td>٦ (الأسبوع ٣-٤)</td><td>واجهات البحث والمزوّدين الأساسية</td><td>بناء Endpoints: البحث حسب النوع/الموقع، عرض بيانات مقدم الخدمة، إنشاء ملف نشاط جديد. توثيق كل Endpoint (Swagger/Postman)</td><td>نظام المصادقة</td><td>REST API موثّق يغطي وظائف الـMVP الأساسية</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: يمكن اختبار كل Endpoint عبر Postman بنجاح، وتوثيق الـAPI متاح للفريق كله.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m4">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الرابع — بناء واجهة الويب (MVP)</div><div class="m-focus">Frontend Web MVP (React)</div></div>
+          <span class="pill high">تطوير أساسي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>٧ (الأسبوع ١-٢)</td><td>هيكلة تطبيق React وصفحات البحث</td><td>إعداد مشروع React، بناء صفحة تسجيل الدخول/الحساب، صفحة البحث الأساسية وربطها بالـAPI</td><td>REST API (الشهر ٣)</td><td>تطبيق ويب يعرض نتائج بحث حقيقية</td></tr>
+              <tr><td>٨ (الأسبوع ٣-٤)</td><td>صفحات الملف الشخصي والتسجيل</td><td>صفحة عرض ملف مقدم الخدمة، نموذج تسجيل نشاط جديد، تحسينات تجاوبية (Responsive) للشاشات المختلفة</td><td>Sprint ٧</td><td>نسخة ويب أولى تغطي كل مسار الـMVP</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: يستطيع مستخدم تجريبي إكمال رحلة كاملة (بحث → عرض ملف → تواصل) من المتصفح.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m5">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الخامس — بناء تطبيق الموبايل (MVP)</div><div class="m-focus">Mobile MVP (Flutter)</div></div>
+          <span class="pill high">تطوير أساسي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>٩ (الأسبوع ١-٢)</td><td>هيكلة تطبيق Flutter وشاشات البحث</td><td>إعداد مشروع Flutter، بناء شاشة تسجيل الدخول والبحث وربطها بنفس الـREST API المستخدم في الويب</td><td>REST API (الشهر ٣)</td><td>تطبيق موبايل يعرض نتائج بحث حقيقية</td></tr>
+              <tr><td>١٠ (الأسبوع ٣-٤)</td><td>شاشات الملف الشخصي والتسجيل</td><td>شاشة عرض ملف مقدم الخدمة، شاشة تسجيل نشاط جديد، اختبار على أجهزة Android و iOS حقيقية</td><td>Sprint ٩</td><td>نسخة موبايل أولى (Android + iOS) تغطي مسار الـMVP</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: يعمل التطبيق على جهازين حقيقيين مختلفين (Android و iOS) بدون أعطال رئيسية.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m6">
+        <div class="month-head">
+          <div><div class="m-name">الشهر السادس — دمج الذكاء الاصطناعي (المرحلة الأولى)</div><div class="m-focus">AI Layer — Problem Classification &amp; Recommendations</div></div>
+          <span class="pill mid">ذكاء اصطناعي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>١١ (الأسبوع ١-٢)</td><td>تصنيف وصف المشكلة (Problem Classification)</td><td>جمع أمثلة أولية لوصف مشاكل شائعة (مثال: «التكييف مش بيبرد»)، بناء أو استدعاء نموذج تصنيف يحوّل الوصف إلى فئة خدمة محددة، بناء Endpoint جديد لهذه الميزة</td><td>REST API الأساسي</td><td>Endpoint يستقبل نص المشكلة ويعيد فئة الخدمة المناسبة</td></tr>
+              <tr><td>١٢ (الأسبوع ٣-٤)</td><td>التوصيات الذكية (Smart Recommendations)</td><td>بناء منطق ترتيب مقدمي الخدمات حسب الموقع، التقييم، والتوفر، وربط الميزة بواجهتي الويب والموبايل</td><td>Sprint ١١ + بيانات تقييمات مبدئية</td><td>نتائج بحث مرتبة ذكيًا في الويب والموبايل</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: يستطيع المستخدم كتابة وصف مشكلة بأسلوبه الخاص، ويحصل على نتائج مناسبة دون البحث بكلمة مفتاحية دقيقة.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m7">
+        <div class="month-head">
+          <div><div class="m-name">الشهر السابع — نظام التقييمات وملفات مقدمي الخدمة الكاملة</div><div class="m-focus">Reviews System &amp; Full Provider Profiles</div></div>
+          <span class="pill mid">تطوير مرحلة ٢</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>١٣ (الأسبوع ١-٢)</td><td>نظام التقييمات والمراجعات</td><td>بناء Endpoints لإضافة تقييم ومراجعة نصية، عرض متوسط التقييم وعدد المراجعات في نتائج البحث والملف الشخصي</td><td>ملفات مقدمي الخدمة</td><td>نظام تقييم كامل يعمل في الويب والموبايل</td></tr>
+              <tr><td>١٤ (الأسبوع ٣-٤)</td><td>استكمال ملف مقدم الخدمة والمفضّلة</td><td>إضافة مواعيد العمل والتوفر الحي (Live Working Hours)، بناء ميزة «المفضّلة» لحفظ مقدمي الخدمات</td><td>Sprint ١٣</td><td>ملف تعريفي غني لكل مقدم خدمة + قائمة مفضّلة للمستخدم</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: يعرض كل ملف مقدم خدمة بيانات كاملة وموثوقة (تقييمات، مواعيد، توفر) في الواجهتين.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m8">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الثامن — طبقة الأمان السيبراني</div><div class="m-focus">Cyber Security Layer</div></div>
+          <span class="pill high">أمان</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>١٥ (الأسبوع ١-٢)</td><td>تأمين المصادقة وتشفير البيانات</td><td>تقوية آلية تسجيل الدخول (تشفير كلمات المرور، صلاحيات الوصول Authorization)، تشفير البيانات الحساسة في قاعدة البيانات</td><td>نظام المصادقة الحالي</td><td>مصادقة وتخزين بيانات مؤمّنان حسب أفضل الممارسات</td></tr>
+              <tr><td>١٦ (الأسبوع ٣-٤)</td><td>أمان الـAPI والمراقبة</td><td>حماية نقاط الوصول (Rate Limiting، التحقق من المدخلات لمنع هجمات الحقن)، إعداد سجلّ مراقبة أساسي للأحداث الأمنية</td><td>Sprint ١٥</td><td>REST API محمي + سجل مراقبة أساسي</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: تجتاز نقاط الوصول الرئيسية فحصًا أوليًا للثغرات الشائعة (مثل SQL Injection وXSS).</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m9">
+        <div class="month-head">
+          <div><div class="m-name">الشهر التاسع — تحليل المراجعات بالذكاء الاصطناعي ولوحة التحكم</div><div class="m-focus">AI Review Analysis &amp; Admin Dashboard (قرار مفتوح)</div></div>
+          <span class="pill mid">ذكاء اصطناعي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>١٧ (الأسبوع ١-٢)</td><td>تحليل المراجعات (Review Analysis)</td><td>بناء منطق لتحليل نصوص المراجعات واستخراج نقاط القوة والضعف المتكررة تلقائيًا (Sentiment/Keyword Analysis)، عرض ملخص ذكي في ملف مقدم الخدمة</td><td>نظام التقييمات (الشهر ٧)</td><td>ملخص تلقائي لأهم ملاحظات العملاء لكل مزوّد</td></tr>
+              <tr><td>١٨ (الأسبوع ٣-٤)</td><td>لوحة تحكم إدارية أساسية ⚠️</td><td>إن قرر الفريق تضمينها: بناء لوحة بسيطة لإدارة المستخدمين والمحتوى والإبلاغات</td><td>قرار الفريق (قسم ١٠)</td><td>لوحة إدارة أساسية أو توثيق قرار تأجيلها</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: تظهر رؤى تلقائية من المراجعات، ويكون قرار لوحة التحكم موثقًا (سواء بالتنفيذ أو التأجيل).</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m10">
+        <div class="month-head">
+          <div><div class="m-name">الشهر العاشر — الاختبار الشامل وإصلاح الأخطاء</div><div class="m-focus">Unit &amp; Integration Testing, Bug Fixing</div></div>
+          <span class="pill high">اختبار</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>١٩ (الأسبوع ١-٢)</td><td>اختبار الوحدات الشامل (Unit Testing)</td><td>كتابة/استكمال اختبارات الوحدات لكل من الـBackend والـFrontend والموبايل، رفع نسبة تغطية الكود (Code Coverage) للأجزاء الحرجة</td><td>كل الميزات الأساسية مكتملة</td><td>تقرير تغطية اختبارات الوحدات</td></tr>
+              <tr><td>٢٠ (الأسبوع ٣-٤)</td><td>اختبار التكامل (Integration Testing)</td><td>اختبار تدفق البيانات الكامل بين الويب/الموبايل والـAPI وقاعدة البيانات وطبقة الذكاء الاصطناعي معًا، إصلاح الأخطاء المكتشفة</td><td>Sprint ١٩</td><td>نظام مُختبر بالتكامل مع قائمة أخطاء مُغلقة</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: تعمل كل رحلات المستخدم الرئيسية بدون أخطاء حرجة (Critical Bugs) في بيئة اختبار مشابهة للإنتاج.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m11">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الحادي عشر — اختبار الأمان والأداء وقبول المستخدم</div><div class="m-focus">Penetration Testing, Performance Testing &amp; UAT</div></div>
+          <span class="pill high">اختبار نهائي</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>٢١ (الأسبوع ١-٢)</td><td>اختبار الاختراق والأداء</td><td>إجراء اختبار اختراق (Penetration Testing) مبسّط على نقاط الوصول الحساسة، اختبار الأداء تحت عدد مستخدمين متزامنين معقول</td><td>طبقة الأمان (الشهر ٨)</td><td>تقرير ثغرات + تقرير أداء مع إصلاحات</td></tr>
+              <tr><td>٢٢ (الأسبوع ٣-٤)</td><td>اختبار قبول المستخدم (UAT)</td><td>تجربة النظام مع مستخدمين حقيقيين أو محاكاة من السوق المستهدف (طنطا)، جمع الملاحظات وتحسين تجربة الاستخدام قبل الإغلاق النهائي للتطوير</td><td>Sprint ٢١</td><td>تقرير UAT + قائمة تحسينات نهائية منفّذة</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر الشهر مكتملًا عندما: لا توجد ثغرات أمنية حرجة مفتوحة، ويوافق مستخدمو الاختبار على سهولة استخدام النظام.</div>
+        </div>
+      </div>
+
+      <div class="month-block" id="m12">
+        <div class="month-head">
+          <div><div class="m-name">الشهر الثاني عشر — التوثيق النهائي والنشر والمناقشة</div><div class="m-focus">Documentation, Deployment &amp; Project Defense</div></div>
+          <span class="pill mid">إغلاق المشروع</span>
+        </div>
+        <div class="month-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Sprint</th><th>الهدف</th><th>المهام الرئيسية</th><th>يعتمد على</th><th>المخرج</th></tr></thead>
+            <tbody>
+              <tr><td>٢٣ (الأسبوع ١-٢)</td><td>التوثيق النهائي والنشر</td><td>كتابة تقرير المشروع النهائي الكامل، نشر النسخة التجريبية (Deployment) على بيئة الاستضافة المختارة، تجهيز فيديو/عرض تجريبي للنظام</td><td>اكتمال الاختبار النهائي</td><td>تقرير مشروع كامل + نسخة منشورة قابلة للعرض</td></tr>
+              <tr><td>٢٤ (الأسبوع ٣-٤)</td><td>تجهيز المناقشة النهائية</td><td>تجهيز العرض التقديمي لمناقشة المشروع، بروفات تقديم لكل عضو، مراجعة أسئلة متوقعة من لجنة المناقشة</td><td>Sprint ٢٣</td><td>عرض تقديمي جاهز + فريق مستعد للمناقشة</td></tr>
+            </tbody>
+          </table></div>
+          <div class="status-note">نعتبر المشروع مكتملًا عندما: النظام منشور ويعمل، التقرير النهائي مكتمل، والفريق قادر على شرح كل جزء من النظام أمام لجنة المناقشة.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Testing -->
+    <section id="testing">
+      <h2><span class="num">٧</span> خطة الاختبار (Testing Plan)</h2>
+      <p class="lede">الاختبار ليس نشاطًا يحدث مرة واحدة في نهاية المشروع، بل مستمر منذ الشهر الأول، مع ذروتين: اختبار التكامل في الشهر العاشر، والاختبار النهائي الشامل في الشهر الحادي عشر.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>نوع الاختبار</th><th>يبدأ في</th><th>الهدف منه</th><th>الأداة المقترحة</th><th>المسؤول</th></tr></thead>
+          <tbody>
+            <tr><td>اختبار الوحدات (Unit Testing)</td><td>من الشهر ٣ (مستمر)</td><td>التأكد من صحة كل دالة/وحدة كود بشكل منفصل فور كتابتها</td><td>Jest / Mocha (Node.js)، Flutter Test</td><td>كل مطوّر عن كوده</td></tr>
+            <tr><td>اختبار التكامل (Integration Testing)</td><td>الشهر ١٠</td><td>التأكد من عمل الواجهات والـAPI وقاعدة البيانات وطبقة الذكاء الاصطناعي معًا كنظام واحد</td><td>Postman / Supertest</td><td>منسّق المشروع + فريق الـBackend</td></tr>
+            <tr><td>اختبار الأمان (Security / Penetration Testing)</td><td>الشهر ٨ (أولي)، الشهر ١١ (نهائي)</td><td>اكتشاف الثغرات الأمنية قبل النشر</td><td>OWASP ZAP أو أداة مشابهة</td><td>مهندس الأمان</td></tr>
+            <tr><td>اختبار الأداء (Performance Testing)</td><td>الشهر ١١</td><td>التأكد من استجابة النظام تحت عدد مستخدمين متزامنين معقول</td><td>Apache JMeter أو k6</td><td>مطوّر الـBackend</td></tr>
+            <tr><td>اختبار قبول المستخدم (UAT)</td><td>الشهر ١١</td><td>التأكد أن النظام يلبي احتياج المستخدم الفعلي وسهل الاستخدام</td><td>جلسات تجربة مباشرة مع مستخدمين</td><td>الفريق كاملًا</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 8. Risks -->
+    <section id="risks">
+      <h2><span class="num">٨</span> إدارة المخاطر (Risk Management)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الخطر</th><th>الاحتمالية</th><th>الأثر</th><th>إجراء التخفيف</th></tr></thead>
+          <tbody>
+            <tr><td>نقص البيانات الكافية لاختبار وتحسين طبقة الذكاء الاصطناعي في نطاق طنطا</td><td><span class="pill mid">متوسطة</span></td><td><span class="pill high">عالٍ</span></td><td>البدء بجمع أمثلة تصنيف يدويًا من الشهر السادس، مع إمكانية الاستعانة ببيانات عامة مؤقتة عند الحاجة</td></tr>
+            <tr><td>تأخر تكامل الواجهات الأمامية مع الـAPI بسبب تغييرات متكررة في العقد (Contract)</td><td><span class="pill mid">متوسطة</span></td><td><span class="pill mid">متوسط</span></td><td>توثيق الـAPI مبكرًا (الشهر ٣) والالتزام بعقد ثابت قبل التطوير المتوازي للويب والموبايل</td></tr>
+            <tr><td>ضيق الوقت مقابل حجم الميزات، خصوصًا طبقتي الأمان والذكاء الاصطناعي</td><td><span class="pill high">عالية</span></td><td><span class="pill high">عالٍ</span></td><td>الالتزام الصارم بمبدأ الـMVP أولًا، وتأجيل أي ميزة من «المرحلة المستقبلية» فور الشعور بضغط الوقت</td></tr>
+            <tr><td>عدم وضوح نطاق «SOC» (مركز عمليات أمنية) داخل مشروع تخرج طلابي — وهو عادة نظام مؤسسي كامل وليس ميزة تُبنى من الصفر في عام واحد</td><td><span class="pill high">عالية</span></td><td><span class="pill mid">متوسط</span></td><td>تقليص النطاق إلى ممارسات أمنية جوهرية (مصادقة قوية، تشفير، اختبار اختراق مبسّط) بدل بناء SOC كامل، بالتنسيق مع المشرف</td></tr>
+            <tr><td>تأخير حسم القرارات التقنية المفتوحة (محرك قاعدة البيانات، طريقة بناء الذكاء الاصطناعي...)</td><td><span class="pill mid">متوسطة</span></td><td><span class="pill high">عالٍ</span></td><td>حسم كل القرارات المفتوحة في القسم ١٠ خلال أول أسبوعين من المشروع، دون تأجيل</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 9. Deliverables -->
+    <section id="deliverables">
+      <h2><span class="num">٩</span> المخرجات حسب كل ربع سنة</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الفترة</th><th>المخرجات الرئيسية</th></tr></thead>
+          <tbody>
+            <tr><td><strong class="ink">الربع الأول</strong><br>(الأشهر ١–٣)</td><td>وثيقة متطلبات معتمدة · مخطط معماري كامل · تصميم قاعدة البيانات (ERD) · تصميمات Figma لشاشات الـMVP · مستودع ومكان عمل جاهز · نسخة أولى من الـREST API موثّقة</td></tr>
+            <tr><td><strong class="ink">الربع الثاني</strong><br>(الأشهر ٤–٦)</td><td>تطبيق ويب MVP يعمل بالكامل · تطبيق موبايل MVP على Android وiOS · ميزات تصنيف المشكلة والتوصيات الذكية الأولية</td></tr>
+            <tr><td><strong class="ink">الربع الثالث</strong><br>(الأشهر ٧–٩)</td><td>نظام تقييمات ومراجعات كامل · ملفات مقدمي خدمة غنية بالبيانات · طبقة أمان مطبقة (مصادقة، تشفير، حماية API) · تحليل ذكي للمراجعات</td></tr>
+            <tr><td><strong class="ink">الربع الرابع</strong><br>(الأشهر ١٠–١٢)</td><td>نظام مُختبر بالكامل (وحدات، تكامل، أمان، أداء، UAT) · تقرير المشروع النهائي · نسخة منشورة قابلة للعرض · عرض تقديمي وفريق جاهز للمناقشة</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 10. Open decisions -->
+    <section id="open">
+      <h2><span class="num">١٠</span> القرارات المفتوحة التي يحتاج الفريق حسمها</h2>
+      <p class="lede">كل بند هنا <strong>غير محدد في الملفات الحالية ويحتاج إلى قرار من الفريق</strong>. الخطة أعلاه مبنية على افتراض أن هذه القرارات ستُحسم في الأسبوعين الأولين (الشهر الأول)، دون أن تفترض هذه الوثيقة إجابة نيابة عنكم.</p>
+
+      <div class="open-q"><div class="flag">⚠️ حجم الفريق وتوزيع الأعضاء بالاسم</div><p>عدد الأعضاء وتخصص كل واحد بالضبط غير مذكور. الخيارات المقترحة موجودة في القسم ٢ (٤ أعضاء أو ٥–٦ أعضاء).</p></div>
+
+      <div class="open-q"><div class="flag">⚠️ محرك قاعدة البيانات (Database Engine)</div><ul>
+        <li><strong class="ink">PostgreSQL</strong> — مفتوح المصدر، دعم قوي للبيانات الجغرافية عبر امتداد PostGIS (مفيد لميزة «الأقرب لي»)</li>
+        <li><strong class="ink">MySQL</strong> — شائع وبسيط الإعداد، مناسب لمشروع تخرج بموارد محدودة</li>
+        <li><strong class="ink">SQL Server</strong> — مناسب إن كان الفريق معتادًا على بيئة Microsoft</li>
+      </ul></div>
+
+      <div class="open-q"><div class="flag">⚠️ إطار العمل فوق Node.js</div><ul>
+        <li><strong class="ink">Express.js</strong> — بسيط وخفيف، منحنى تعلم أقل، مناسب لجدول زمني ضيق</li>
+        <li><strong class="ink">NestJS</strong> — بنية أكثر تنظيمًا وأقرب لمعايير الشركات، لكنه يحتاج وقتًا أطول للتعلم</li>
+      </ul></div>
+
+      <div class="open-q"><div class="flag">⚠️ طريقة بناء طبقة الذكاء الاصطناعي</div><ul>
+        <li><strong class="ink">استخدام واجهة برمجية جاهزة</strong> (مثل OpenAI API) لتصنيف النصوص وتحليل المشاعر — أسرع تنفيذًا وأقل مخاطرة تقنية</li>
+        <li><strong class="ink">بناء نموذج NLP مخصص بلغة Python</strong> — يُظهر عمقًا تقنيًا أكبر مناسبًا لمشروع تخرج، لكنه يحتاج وقت تدريب واختبار أطول</li>
+      </ul></div>
+
+      <div class="open-q"><div class="flag">⚠️ نطاق طبقة الأمان الفعلي (خصوصًا SOC)</div><p>بناء مركز عمليات أمنية (SOC) كامل غير واقعي ضمن مشروع تخرج لمدة عام. يُقترح تقليص النطاق إلى: مصادقة قوية، تشفير بيانات، حماية API، واختبار اختراق مبسّط — على أن يقرّ الفريق والمشرف هذا التقليص صراحة.</p></div>
+
+      <div class="open-q"><div class="flag">⚠️ طبيعة «التواصل المباشر»</div><p>هل يعني عرض رقم هاتف/رابط واتساب فقط (أبسط وأسرع)، أم نظام رسائل داخل التطبيق (In-app Messaging، يحتاج وقت تطوير إضافي)؟</p></div>
+
+      <div class="open-q"><div class="flag">⚠️ هل «إرسال طلب خدمة» يشمل دفعًا إلكترونيًا؟</div><p>غير محدد إن كان الحجز يتضمن دفعًا داخل التطبيق، أو أنه مجرد طلب تواصل يُسوّى الدفع فيه لاحقًا وجهًا لوجه بين العميل ومقدم الخدمة.</p></div>
+
+      <div class="open-q"><div class="flag">⚠️ الحاجة إلى لوحة تحكم إدارية (Admin Dashboard)</div><p>لم تُذكر صراحة في الملفات، لكنها عادة ضرورية لأي منصة بها تسجيل مستخدمين ومحتوى (لإدارة الإبلاغات والحسابات المخالفة). يحتاج الفريق تحديد أولويتها ضمن الوقت المتاح.</p></div>
+
+      <div class="open-q"><div class="flag">⚠️ أداة تصميم الواجهات (UI/UX)</div><p>لا توجد أداة محددة في الملفات. الاقتراح الشائع هو Figma، لكن القرار النهائي يعود للفريق.</p></div>
+
+      <div class="open-q"><div class="flag">⚠️ بيئة الاستضافة والنشر (Hosting/Deployment)</div><p>غير محدد أين سيتم نشر النظام في النهاية (سيرفر الجامعة، خدمة سحابية مجانية للطلاب، أو غيرها). يُنصح بحسم هذا مبكرًا لأنه يؤثر على قرارات تقنية أخرى مثل قاعدة البيانات.</p></div>
+    </section>
+
+    <div class="divider"></div>
+    <p class="footer-note">هذه الخطة مبنية بالكامل على المستندين المرفقين من الفريق، وأي نقطة غير مذكورة فيهما تم تمييزها صراحة بدل افتراضها. يُنصح بمراجعتها مع المشرف الأكاديمي وتحديثها كلما تغيّر نطاق المشروع.</p>
+  </main>
+</div>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('tocNav');
+  if(btn){
+    btn.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  }
+</script>
+</body>
+</html>
