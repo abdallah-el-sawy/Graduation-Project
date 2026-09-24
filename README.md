@@ -7,4 +7,4 @@ https://abdallah-el-sawy.github.io/Graduation-Project/zabatha-plan.html
 
 
 ## Initial Prototype
-https://abdallah-el-sawy.github.io/Graduation-Project/index(2).html
+https://abdallah-el-sawy.github.io/Graduation-Project/index.html
